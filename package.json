@@ -1,0 +1,12 @@
+{
+  "name": "elfwidget",
+  "version": "1.0.0",
+  "main": "elfwidget.js",
+  "repository": "https://github.com/nvbooster/elfwidget.git",
+  "author": "nvb <nvb@aproxima.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "*",
+    "jquery-ui": "*"
+  }
+}
