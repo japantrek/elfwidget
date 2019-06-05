@@ -16,7 +16,7 @@ $('textarea').elfwidget(options)
 
 ### Configuration
 
-Global elfwidget configuration 
+Global elfwidget configuration
 ```js
 window.elfconfig = {
   url: '/elfinder', // default elfinder url
@@ -41,11 +41,11 @@ All options can be provided as keys in options object or *data-* attributes
 **imagelist**: add image to imagelist widget
 
 For using with summertime elfwidget script must be included _after (!!!)_ summernote library.
- 
+
 ## Summernote integration
 
 ```js
-require('summernote') 					  //optional
+require('summernote')                    //optional
 require('elfwidget/summernote.elfinder') //optional
 require('elfwidget')
 ```

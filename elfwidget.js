@@ -4,7 +4,7 @@
     define(['jquery', 'jquery-ui'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // Node/CommonJS
-    require('jquery-ui')
+    require('jquery-ui');
     module.exports = factory(require('jquery'));
   } else {
     // Browser globals
@@ -37,10 +37,10 @@
       var container = $('<div></div>');
       container.css('margin-top', '5px');
       container.insertAfter($(element).is(':data(summernote)') ? $(element).data('summernote').layoutInfo.editor : element);
-      
-      element._btncontainer = container.get(0); 
-    } 
-    
+
+      element._btncontainer = container.get(0);
+    }
+
     return element._btncontainer;
   }
 
@@ -66,7 +66,7 @@
     _create: function () {
       var btn, widget = this,
       target = $(this.options.target).length ? $(this.options.target) : this.element;
-      
+
       if ((this.options.callback == 'browse' || this.options.callback == 'insert')
           && target.is('textarea')
       ) {
@@ -92,17 +92,17 @@
         tmpbtn.on('click', function (e) {
           e.preventDefault();
           tmphandler();
-        })
+        });
       } else if (
         ('imagelist' == this.options.callback)
-        || this.element.is('textarea')        
+        || this.element.is('textarea')
       ) {
         btn = this._createBtn();
         btn.appendTo(getButtonsContainer(this.element));
       } else {
         btn = this.element;
       }
-      
+
       if (('insert' == this.options.callback)
         && this.element.is('textarea')
         && $.fn.summernote
@@ -111,13 +111,13 @@
         sBtn.css('margin-left', '5px');
         sBtn.on('click', function (e) {
           e.preventDefault();
-          
+
           window.summernote_config = window.summernote_config || {};
           widget.element.summernote(window.summernote_config);
-          
+
           widget.options.callback = 'summernote';
           widget.handler = widget._getHandler(widget.options.callback);
-          
+
           var tmpbtn = widget._createBtn(),
           tmphandler = widget._getHandler('summernoteins');
           tmpbtn.on('click', function (e) {
@@ -130,7 +130,7 @@
             .css('margin-top', '-15px')
             .append(tmpbtn)
           ;
-        })
+        });
         sBtn.appendTo(getButtonsContainer(this.element));
       }
 
@@ -139,7 +139,7 @@
         btn.on('click', function (e) {
           e.preventDefault();
           handler();
-        })
+        });
       }
 
       this._refresh();
@@ -255,9 +255,7 @@
       };
     },
 
-    _refresh: function () {
-
-    },
+    _refresh: function () {},
 
     handle: function () {
       this.handler();
@@ -265,4 +263,4 @@
   });
 
   return $.fn.elfwidget;
-}))
+}));

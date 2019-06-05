@@ -4,7 +4,7 @@
     define(['jquery', 'summernote'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // Node/CommonJS
-    require('summernote')
+    require('summernote');
     module.exports = factory(require('jquery'));
   } else {
     // Browser globals
@@ -30,6 +30,7 @@
         });
 
         var $elfinder = button.render();
+
         return $elfinder;
       })
 
@@ -38,5 +39,5 @@
         this.$panel = null;
       }
     }
-  })
-}))
+  });
+}));
