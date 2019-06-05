@@ -21,7 +21,7 @@
           contents: '<i class="fa fa-picture-o"/>',
           tooltip: 'Insert image from ElFinder',
           click: function () {
-            if (element.is(':data(jsadmin-elfwidget)')) {
+            if (element.data('jsadmin-elfwidget')) {
               element.elfwidget('handle');
             } else {
               alert('Elfwidget is not initialized');

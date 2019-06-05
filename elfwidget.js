@@ -36,7 +36,7 @@
     if (!element._btncontainer) {
       var container = $('<div></div>');
       container.css('margin-top', '5px');
-      container.insertAfter($(element).is(':data(summernote)') ? $(element).data('summernote').layoutInfo.editor : element);
+      container.insertAfter($(element).data('summernote') ? $(element).data('summernote').layoutInfo.editor : element);
 
       element._btncontainer = container.get(0);
     }
@@ -70,9 +70,9 @@
       if ((this.options.callback == 'browse' || this.options.callback == 'insert')
           && target.is('textarea')
       ) {
-        if (target.is(':data(summernote)')) {
+        if (target.data('summernote')) {
           this.options.callback = 'summernote'
-        } else if (target.is(':data(cmEditor)')) {
+        } else if (target.data('cmEditor')) {
           this.options.callback = 'codemirror'
         } else {
           this.options.callback = 'insert'
